@@ -1,115 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Generate lorem ipsum dummy text in a drop of a hat.">
-    <meta name="robots" content="index, follow"/>
-    <meta name="twitter:card" content="Generate lorem ipsum dummy text in a drop of a hat."/>
-    <meta name="twitter:site" content="Lipsum Generator"/>
-    <meta name="twitter:creator" content="@phucbm"/>
-    <meta property="og:url" content="https://lipsum-generator.netlify.app"/>
-    <meta property="og:title" content="Generate lorem ipsum dummy text in a drop of a hat."/>
-    <meta property="og:description"
-          content="Generate lorem ipsum dummy text in 4 types of content: Words, Sentences, Paragraphs, and List (HTML). Available as a Chrome Extension and a Web App."/>
-    <meta property="og:image"
-          content="https://raw.githubusercontent.com/phucbm/lipsum-generator/master/media/v3/1280-web-app.jpg"/>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Generate lorem ipsum dummy text in a drop of a hat.">
+	<meta name="robots" content="index, follow"/>
+	<meta name="twitter:card" content="Generate lorem ipsum dummy text in a drop of a hat."/>
+	<meta name="twitter:site" content="Lipsum Generator"/>
+	<meta name="twitter:creator" content="@phucbm"/>
+	<meta property="og:url" content="https://lipsum-generator.netlify.app"/>
+	<meta property="og:title" content="Generate lorem ipsum dummy text in a drop of a hat."/>
+	<meta property="og:description"
+		  content="Generate lorem ipsum dummy text in 4 types of content: Words, Sentences, Paragraphs, and List (HTML). Available as a Chrome Extension and a Web App."/>
+	<meta property="og:image"
+		  content="https://raw.githubusercontent.com/phucbm/lipsum-generator/master/media/v3/1280-web-app.jpg"/>
 
-    <title>Lipsum Generator v3</title>
-    <link rel="icon" href="assets/img/128.png" type="image/x-icon">
+	<title>Lipsum Generator v3</title>
 
-    <!-- stylesheet -->
-    <link rel="stylesheet" href="assets/css/extension-variables.css">
-    <link rel="stylesheet" href="assets/css/easy-select.css">
-    <link rel="stylesheet" href="assets/css/extension-ui.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+	<link rel="icon" href="assets/img/128.png" type="image/x-icon">
+
+	<!-- stylesheet -->
+	<link rel="stylesheet" href="assets/css/extension-variables.css">
+	<link rel="stylesheet" href="assets/css/easy-select.css">
+	<link rel="stylesheet" href="assets/css/extension-ui.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src='https://www.googletagmanager.com/gtag/js?id=G-X4H501H94S'></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-X4H501H94S');
+	</script>
+
 </head>
 <body>
 
 <main id="lipsum" class="app-container">
 
-    <div class="app-body loading">
-        <div class="app-header">
-            <h1>Lipsum Generator</h1>
-        </div>
+	<div class="app-body loading">
+		<div class="app-header">
+			<h1>Lipsum Generator</h1>
+		</div>
 
-        <div class="app-body-inner">
-            <div class="btn-group is-indicator">
-                <div class="btn-group-item">
-                    <button class="btn" data-type="word">Word</button>
-                </div>
-                <div class="btn-group-item">
-                    <button class="btn" data-type="sentence">Sentence</button>
-                </div>
-                <div class="btn-group-item">
-                    <button class="btn" data-type="paragraph">Paragraph</button>
-                </div>
-                <div class="btn-group-item">
-                    <button class="btn" data-type="list">List (HTML)</button>
-                </div>
-            </div>
+		<div class="app-body-inner">
+			<div class="btn-group is-indicator">
+				<div class="btn-group-item">
+					<button class="btn" data-type="word">Word</button>
+				</div>
+				<div class="btn-group-item">
+					<button class="btn" data-type="sentence">Sentence</button>
+				</div>
+				<div class="btn-group-item">
+					<button class="btn" data-type="paragraph">Paragraph</button>
+				</div>
+				<div class="btn-group-item">
+					<button class="btn" data-type="list">List (HTML)</button>
+				</div>
+			</div>
 
-            <div class="range-slider">
-                <label>
-                    <input type="range" min="1" max="100" value="0" data-quantity>
-                </label>
-            </div>
+			<div class="range-slider">
+				<label>
+					<input type="range" min="1" max="100" value="0" data-quantity>
+				</label>
+			</div>
 
-            <div class="output-wrapper">
-                <div data-output data-copy-text class="output-area"></div>
-                <span class="output-length" data-output-length>0</span>
-            </div>
+			<div class="output-wrapper">
+				<div data-output data-copy-text class="output-area"></div>
+				<span class="output-length" data-output-length>0</span>
+			</div>
 
-            <div>
-                <div class="checkbox">
-                    <input type="checkbox" id="prefix" data-checkbox="prefix">
-                    <label for="prefix">Begin with "Lorem ipsum dolor sit amet"</label>
-                </div>
-                <div class="checkbox for-extension">
-                    <input type="checkbox" id="auto-copy" data-checkbox="auto-copy">
-                    <label for="auto-copy">Auto copy when open extension</label>
-                </div>
-            </div>
+			<div>
+				<div class="checkbox">
+					<input type="checkbox" id="prefix" data-checkbox="prefix">
+					<label for="prefix">Begin with "Lorem ipsum dolor sit amet"</label>
+				</div>
+				<div class="checkbox for-extension">
+					<input type="checkbox" id="auto-copy" data-checkbox="auto-copy">
+					<label for="auto-copy">Auto copy when open extension</label>
+				</div>
+			</div>
 
-            <div class="dropdown">
-                <label>
-                    <select data-easy-select data-text-transform>
-                        <option value="capitalizeFirstWordInSentence" selected>
-                            Capitalize the first word in a sentence.
-                        </option>
-                        <option value="capitalize">Capitalize</option>
-                        <option value="uppercase">UPPERCASE</option>
-                        <option value="lowercase">lowercase</option>
-                    </select>
-                </label>
-            </div>
+			<div class="dropdown">
+				<label>
+					<select data-easy-select data-text-transform>
+						<option value="capitalizeFirstWordInSentence" selected>
+							Capitalize the first word in a sentence.
+						</option>
+						<option value="capitalize">Capitalize</option>
+						<option value="uppercase">UPPERCASE</option>
+						<option value="lowercase">lowercase</option>
+					</select>
+				</label>
+			</div>
 
-            <div class="btn-group">
-                <div class="btn-group-item">
-                    <button class="btn btn-block btn-copy" data-copy-text>Copy Text</button>
-                </div>
-                <div class="btn-group-item">
-                    <button class="btn btn-block btn-copy disabled" data-copy-slug>Copy Slug</button>
-                </div>
-            </div>
+			<div class="btn-group">
+				<div class="btn-group-item">
+					<button class="btn btn-block btn-copy" data-copy-text>Copy Text</button>
+				</div>
+				<div class="btn-group-item">
+					<button class="btn btn-block btn-copy disabled" data-copy-slug>Copy Slug</button>
+				</div>
+			</div>
 
-        </div>
+		</div>
 
-    </div>
-    <div class="app-footer">
-        © 2022 - <a
-            href="https://chrome.google.com/webstore/detail/lipsum-generator/fepopmflofkppphpkfjdbmimglkeifna"
-            title="Rate this on Chrome store" target="_blank">Lipsum Generator</a> - <a
-            href="https://github.com/phucbm/lipsum-generator" target="_blank">GitHub</a>
-    </div>
+	</div>
+	<div class="app-footer">
+		© 2022 - <a
+			href="https://chrome.google.com/webstore/detail/lipsum-generator/fepopmflofkppphpkfjdbmimglkeifna"
+			title="Rate this on Chrome store" target="_blank">Lipsum Generator</a> - <a
+			href="https://github.com/phucbm/lipsum-generator" target="_blank">GitHub</a>
+	</div>
 
-    <div class="product-hunt-badge">
-        <a href="https://www.producthunt.com/posts/lipsum-generator?utm_source=badge-review&utm_medium=badge&utm_souce=badge-lipsum-generator#discussion-body"
-           target="_blank"><img
-                src="https://api.producthunt.com/widgets/embed-image/v1/review.svg?post_id=325264&theme=light"
-                alt="Lipsum Generator - Generate lorem ipsum dummy text in a drop of a hat. | Product Hunt"
-                style="width: 250px; height: 45px;" width="250" height="45"/></a>
-    </div>
+	<div class="product-hunt-badge">
+		<a href="https://www.producthunt.com/posts/lipsum-generator?utm_source=badge-review&utm_medium=badge&utm_souce=badge-lipsum-generator#discussion-body"
+		   target="_blank"><img
+				src="https://api.producthunt.com/widgets/embed-image/v1/review.svg?post_id=325264&theme=light"
+				alt="Lipsum Generator - Generate lorem ipsum dummy text in a drop of a hat. | Product Hunt"
+				style="width: 250px; height: 45px;" width="250" height="45"/></a>
+	</div>
 
 </main>
 
